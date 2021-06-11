@@ -13,7 +13,7 @@ var userSchema = new mongoose.Schema({
   password:String
 });
 
-const secret="this is our long little secret";
+const secret=" long little secret";
 userSchema.plugin(encrypt, { secret:secret,encryptedFields: ["password"] });
 const User= new mongoose.model("User",userSchema);
 app.get("/", function(req, res) {
